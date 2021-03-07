@@ -1,13 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Bootstrap-practice</title>
-  </head>
-  <body>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Filmlibrary 7 group</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Spinner -->
+  <div class="spinner" id="loading"></div>
+
+  <!-- header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-box">
+        <div class="nav" id="nav">
+          <div class="logo">
+            <a href="./index.html" class="link-logo">
+              <svg class="icon-logo" width="24px" height="24px">
+                <use href="./images/symbol-defs.svg#icon-film"></use>
+              </svg>
+              <h1 class="title">Filmoteka</h1>
+            </a>
+          </div>
+          <nav>
+            <ul class="nav-list">
+              <li class="selected">
+                <a href="#" class="check-in">
+                <svg class="icon-check-in" width="30" height="30">
+                  <use href="./images/symbol-defs.svg#icon-user-circle-o">
+                  </use>
+                </svg>
+                <span class="check-in-text">Sing in</span>
+              </a></li>
+              <li class="nav-item">
+                <a class="link-nav activ" href="./index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="link-nav" href="./index.html" aria-label="library-page">my library</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <form class="form-search" action="">
+          <input type="text" name="movieName" class="search-input movie-searchTag movie-searchTag-js"
+            placeholder="Поиск фильмов" autocomplete="off" id="input" />
+          <button type="submit" class="btn-form"></button>
+        </form>
+      </div>
     </div>
-  </body>
+  </header>
+
+  <!-- gallery -->
+  <main>
+    <div class="container">
+      <div class="movies-container movies-container-js"></div>
+      <!-- В этот див рендериться список фильмов -->
+    </div>
+
+    <!-- pagination-->
+    <div class="container"></div>
+  </main>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="footer-text section-footer container">
+      <span class="section-footer-text">© 2021 | All Rights Reserved |</span>
+      <span class="footer-span">Developed with
+        <i class="material-icons">favorite</i>
+        by
+        <a data-modal-footer-open href="#" class="footer-link">GoIT Students</a></span>
+    </div>
+  </footer>
+  <!-- modal header -->
+
+<div class="modal-header"></div>
+
+  <!-- modal footer -->
+<div data-modal-footer class="backdrop modal-is-hidden">
+  <ul class="li">1</ul>
+  <ul class="li">2</ul>
+  <ul class="li">3</ul>
+  <ul class="li">4</ul>
+  <ul class="li">5</ul>
+      <button data-modal-footer-close type="button" >
+        <svg class="icon-close" width="30" height="30">
+          <use href="./images/symbol-defs.svg#icon-close"></use>
+        </svg>
+      </button>
+</div>
+  <!-- script -->
+</body>
+
 </html>
