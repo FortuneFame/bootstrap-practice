@@ -1,26 +1,36 @@
 const refs = {
-    btnOpenModalFooter: document.querySelector('[data-modal-footer-open]'),
-    backdropModalFooter: document.querySelector('[data-modal-footer]'),
-    btnCloseModalFooter: document.querySelector('[data-modal-footer-close]'),
-};
-
-refs.btnOpenModalFooter.addEventListener('click', onOpenModalFooter);
-refs.btnCloseModalFooter.addEventListener('click', onCloseModalFooter);
-
-function onOpenModalFooter() {
-    preventDefault();
-    window.addEventListener('keydown', onKeyPress);
-
-    refs.backdropModalFooter.classList.add('modal-is-open')
+  openModalFooterBtn: document.querySelector('[data-modal-footer-open]'),
+  modalFooter: document.querySelector('.js-lightbox'),
+  closeModalFooterBtn: document.querySelector('.lightbox-button'),
+  overlayFooter: document.querySelector('.lightbox-overlay'),
 }
 
-function onCloseModalFooter() {
-    refs.backdropModalFooter.classList.remove('.modal-is-open')
-    window.removeEventListener('keydown', onKeyPress);
+refs.openModalFooterBtn.addEventListener('click', onOpenModal);
+refs.closeModalFooterBtn.addEventListener('click', onCloseModal);
+
+
+function onOpenModal() {
+  window.addEventListener('keydown', onPressESC);
+  
+  refs.modalFooter.classList.add('is-open');
+  refs.overlayFooter.addEventListener('click', onClickOverlay);
 }
 
-function onKeyPress(event) {
-  if (event.code === 'Escape') {
-    onCloseModalFooter()
-  };
+function onCloseModal() {
+  window.removeEventListener('keydown', onPressESC);
+  
+  refs.modalFooter.classList.remove('is-open');
 }
+
+function onPressESC(e) {
+  if (e.code === 'Escape') {
+    onCloseModal();
+  }
+}
+
+function onClickOverlay(e) {
+  if (e.target === e.currentTarget) {
+    onCloseModal();
+  }
+}
+

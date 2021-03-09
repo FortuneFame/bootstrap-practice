@@ -82,6 +82,7 @@
   }
   .title {
     display: none;
+
     @media screen and (min-width: 768px) {
       display: flex;
       color: $primary-white-color;
@@ -139,10 +140,16 @@
 }
 
 .nav-item {
-  cursor: pointer;
-  margin-left: 37px;
+  margin-left: 20px;
   padding-top: 12px;
   padding-bottom: 38px;
+  @media screen and (min-width: 768px) {
+    cursor: pointer;
+    // width: 50px;
+    margin-left: 30px;
+    padding-top: 12px;
+    padding-bottom: 38px;
+  }
 }
 
 .link-logo {
@@ -151,23 +158,20 @@
   height: 24px;
 }
 
-// modal header
+// button header
 
 .selected {
   .check-in {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    padding-bottom: 38px;
-
+    padding-bottom: 36px;
     text-decoration: none;
     cursor: pointer;
-
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     .icon-check-in {
-      margin-right: 10px;
+      margin-right: 2px;
       fill: #fff;
     }
     &:hover {
